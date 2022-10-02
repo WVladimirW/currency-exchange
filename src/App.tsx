@@ -20,9 +20,9 @@ function App(props: any) {
       <div className="container">
         <Navbar />
         <Routes>
-          <Route path="https://wvladimirw.github.io/" element={<ChangeCurrencyList state={props.store.getState()} />} />
-          <Route path="https://wvladimirw.github.io/currency" element={<CurrencyItemList state={props.store.getState()} />} />
-          <Route path="*" element={<ChangeCurrencyList state={props.store.getState()} />} />
+          <Route path="https://wvladimirw.github.io/currency-exchange/" element={<ChangeCurrencyList state={props.store.getState()} />} />
+          <Route path="https://wvladimirw.github.io/currency-exchange/currency" element={<CurrencyItemList state={props.store.getState()} />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </div>
