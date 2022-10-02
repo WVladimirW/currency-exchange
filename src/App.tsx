@@ -16,12 +16,12 @@ function App(props: any) {
   }, [])
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <div className="container">
         <Navbar />
         <Routes>
-          <Route path="https://wvladimirw.github.io/" element={<ChangeCurrencyList state={props.store.getState()} />} />
-          <Route path="https://wvladimirw.github.io/currency" element={<CurrencyItemList state={props.store.getState()} />} />
+          <Route path="/" element={<ChangeCurrencyList state={props.store.getState()} />} />
+          <Route path="/currency" element={<CurrencyItemList state={props.store.getState()} />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
