@@ -1,0 +1,2 @@
+.container{display:flex;flex-direction:column;height:100vh}.main{border:1px solid #212121;flex:1 1 auto;overflow:auto;padding:5px}.item-container{align-items:center;border:1px solid gray;border-radius:10px;display:flex;height:40px;text-align:center}.hide-border{border:none}.currency-name{flex:1 1 40%}.currency-date,.currency-rate{flex:1 1 30%}.wrapper{border:1px solid grey;border-radius:10px}p{padding-left:10px}
+/*# sourceMappingURL=main.8845ced8.css.map*/
