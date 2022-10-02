@@ -22,7 +22,7 @@ function App(props: any) {
         <Routes>
           <Route path="https://wvladimirw.github.io/" element={<ChangeCurrencyList state={props.store.getState()} />} />
           <Route path="https://wvladimirw.github.io/currency" element={<CurrencyItemList state={props.store.getState()} />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<ChangeCurrencyList state={props.store.getState()} />} />
         </Routes>
         <Footer />
       </div>
