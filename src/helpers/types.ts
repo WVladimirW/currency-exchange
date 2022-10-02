@@ -6,6 +6,10 @@ export interface dataCurrency {
    "exchangedate": string
 }
 
+export interface dataState {
+   data: dataCurrency[]
+}
+
 export interface StateAction {
    type: string,
    payload: dataCurrency

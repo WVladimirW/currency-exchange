@@ -1,19 +1,27 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import ChangeCurrency from './components/ChangeCurrency'
-import PageNotFound from './components/PageNotFound'
+import ChangeCurrencyList from './components/ChangeCurrencyList'
 import CurrencyItemList from './components/CurrencyItemList'
-import { data } from './store/data'
+import { getDefaultCurrency } from './helpers/GetDataCurency'
+import { setDefaultCurrency } from './store/Reducer'
+import PageNotFound from './components/PageNotFound'
 
-function App() {
+function App(props: any) {
+  useEffect(() => {
+    getDefaultCurrency().then(res => {
+      props.store.dispatch(setDefaultCurrency(res.data))
+    })
+  }, [])
+
   return (
     <BrowserRouter>
       <div className="container">
         <Navbar />
         <Routes>
-          <Route path="/" element={<ChangeCurrency />} />
-          <Route path="/currency" element={<CurrencyItemList data={data} />} />
+          <Route path="/converter" element={<ChangeCurrencyList state={props.store.getState()} />} />
+          <Route path="/currency" element={<CurrencyItemList state={props.store.getState()} />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />

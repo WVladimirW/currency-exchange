@@ -1,14 +1,14 @@
 import CurrencyItem from './CurrencyItem'
 import BasicCurrency from './BasicCurrency'
-import { dataCurrency } from '../helpers/types'
+import { dataState, dataCurrency } from '../helpers/types'
 import CurrencyHeader from './CurrencyHeader'
 
-function CurrencyItemList(props: { data: dataCurrency[] }) {
+function CurrencyItemList(props: { state: dataState }) {
    return (
       <div className='main'>
-         <BasicCurrency />
+         <BasicCurrency state={props.state.data} />
          <CurrencyHeader />
-         {props.data.map((item: dataCurrency) => <CurrencyItem key={item.r030} data={item} />)}
+         {props.state.data.map((item: dataCurrency) => <CurrencyItem key={item.r030} data={item} />)}
       </div>
    )
 }
